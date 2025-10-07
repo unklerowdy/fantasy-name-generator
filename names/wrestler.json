@@ -1,0 +1,10 @@
+{
+  "male": {
+    "first": ["Axel","Blaze","Cody","Dante","Jett","Rex","Knox","Talon","Hunter","Dash","Ryder","Stone","Max","Zane","Leo","Jack","Finn","Troy","Gage","Brock"],
+    "last": ["Stone","Viper","Graves","Steel","Havoc","Blake","Cage","Knight","Storm","Reaper","Fury","Slash","Rage","Titan","Shadow","Fang","Dark","Crush","Blade","Thunder"]
+  },
+  "female": {
+    "first": ["Roxy","Skye","Lexi","Nova","Tessa","Raven","Aria","Jade","Luna","Vega","Storm","Sable","Maya","Cleo","Aurora","Jinx","Zara","Raina","Kira","Faye"],
+    "last": ["Storm","Vixen","Blaze","Havoc","Steel","Knight","Cage","Fury","Shadow","Venom","Slash","Rage","Titan","Fang","Reaper","Dark","Blade","Thunder","Chaos","Ember"]
+  }
+}
