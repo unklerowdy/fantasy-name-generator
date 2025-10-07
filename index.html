@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patron Name Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #eee;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 2rem;
+    }
+    h1 { color: #e63946; margin-bottom: 20px; }
+    select, input, button {
+      margin: 10px;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+    }
+    button {
+      background: #e63946;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover { background: #b91c1c; }
+    #results {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      white-space: pre-line;
+    }
+    #app, #generator { display: none; }
+    #passwordScreen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #errorMsg {
+      color: #f87171;
+      margin-top: 10px;
+      height: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>Quick Name Generator</h1>
+
+    <div id="generator">
+      <div>
+        <label>Category:</label>
+        <select id="category">
+          <option value="wrestler">Wrestler</option>
+          <option value="fantasy">Fantasy</option>
+          <option value="sciFi">Sci-Fi</option>
+        </select>
+
+        <label>Gender:</label>
+        <select id="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+
+        <label>Results per click:</label>
+        <select id="count">
+          <option value="1">1</option>
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="50">50</option>
+        </select>
+      </div>
+
+      <button id="generateBtn">Generate</button>
+      <div id="results"></div>
+    </div>
+  </div>
+
+  <!-- Password screen -->
+  <div id="passwordScreen">
+    <h1>Patron Access</h1>
+    <p>Enter the access password:</p>
+    <input type="password" id="passwordInput" placeholder="Password" />
+    <button id="loginBtn">Enter</button>
+    <div id="errorMsg"></div>
+  </div>
+
+  <script>
+    // --- PASSWORD GATE ---
+    const PASSWORD = "Headshot2025"; // <-- Change this whenever you like
+    const passwordInput = document.getElementById("passwordInput");
+    const loginBtn = document.getElementById("loginBtn");
+    const errorMsg = document.getElementById("errorMsg");
+
+    loginBtn.addEventListener("click", () => {
+      if (passwordInput.value === PASSWORD) {
+        document.getElementById("passwordScreen").style.display = "none";
+        document.getElementById("app").style.display = "block";
+        document.getElementById("generator").style.display = "block";
+      } else {
+        errorMsg.textContent = "Incorrect password. Try again.";
+      }
+    });
+
+    // --- NAME DATA ---
+    const namePools = {
+      wrestler: {
+        male: {
+          first: ["Axel", "Blaze", "Cody", "Dante", "Jett", "Rex", "Knox", "Talon"],
+          last:  ["Stone", "Viper", "Graves", "Steel", "Havoc", "Blake", "Cage", "Knight"]
+        },
+        female: {
+          first: ["Roxy", "Skye", "Lexi", "Nova", "Tessa", "Raven", "Aria", "Jade"],
+          last:  ["Storm", "Vixen", "Blaze", "Havoc", "Steel", "Knight", "Cage", "Fury"]
+        }
+      },
+      fantasy: {
+        male: {
+          first: ["Kael", "Thorne", "Orin", "Bryn", "Darian", "Corwin", "Lucan", "Aldric"],
+          last:  ["Stormborn", "Ashvale", "Silverheart", "Nightbloom", "Windrider", "Duskbane"]
+        },
+        female: {
+          first: ["Elora", "Lyra", "Tamsin", "Seraph", "Arwyn", "Isola", "Nyra", "Selene"],
+          last:  ["Moonfall", "Dawnfire", "Mistvale", "Willowmere", "Starcrest", "Silversong"]
+        }
+      },
+      sciFi: {
+        male: {
+          first: ["Orion", "Talon", "Axion", "Dray", "Rexar", "Nero", "Cyrus", "Zenon"],
+          last:  ["Volt", "Vector", "Prime", "Eclipse", "Ion", "Nova", "Stratus", "Quark"]
+        },
+        female: {
+          first: ["Zyra", "Rhea", "Lyric", "Kira", "Nova", "Vera", "Jyn", "Elexa"],
+          last:  ["Nebula", "Phase", "Quanta", "Eclipse", "Zenith", "Vortex", "Circuit"]
+        }
+      }
+    };
+
+    // --- GENERATOR FUNCTION ---
+    function generateNames(category, gender, count) {
+      const { first, last } = namePools[category][gender];
+      const results = new Set();
+      const maxPossible = first.length * last.length;
+
+      if (count > maxPossible) count = maxPossible;
+
+      while (results.size < count) {
+        const f = first[Math.floor(Math.random() * first.length)];
+        const l = last[Math.floor(Math.random() * last.length)];
+        results.add(`${f} ${l}`);
+      }
+      return Array.from(results);
+    }
+
+    document.getElementById("generateBtn").addEventListener("click", () => {
+      const category = document.getElementById("category").value;
+      const gender = document.getElementById("gender").value;
+      const count = parseInt(document.getElementById("count").value);
+      const names = generateNames(category, gender, count);
+      document.getElementById("results").textContent = names.join("\n");
+    });
+  </script>
+</body>
+</html>
