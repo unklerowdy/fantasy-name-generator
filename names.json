@@ -1,0 +1,32 @@
+{
+  "wrestler": {
+    "male": {
+      "first": ["Axel","Blaze","Cody","Dante","Jett","Rex","Knox","Talon","Hunter","Dash","Ryder","Stone","Max","Zane","Leo","Jack","Finn","Troy","Gage","Brock"],
+      "last": ["Stone","Viper","Graves","Steel","Havoc","Blake","Cage","Knight","Storm","Reaper","Fury","Slash","Rage","Titan","Shadow","Fang","Dark","Crush","Blade","Thunder"]
+    },
+    "female": {
+      "first": ["Roxy","Skye","Lexi","Nova","Tessa","Raven","Aria","Jade","Luna","Vega","Storm","Sable","Maya","Cleo","Aurora","Jinx","Zara","Raina","Kira","Faye"],
+      "last": ["Storm","Vixen","Blaze","Havoc","Steel","Knight","Cage","Fury","Shadow","Venom","Slash","Rage","Titan","Fang","Reaper","Dark","Blade","Thunder","Chaos","Ember"]
+    }
+  },
+  "fantasy": {
+    "male": {
+      "first": ["Kael","Thorne","Orin","Bryn","Darian","Corwin","Lucan","Aldric","Eldric","Fenris","Galen","Ronan","Torian","Leoric","Caius","Alaric","Varian","Draven","Sylas","Balthor"],
+      "last": ["Stormborn","Ashvale","Silverheart","Nightbloom","Windrider","Duskbane","Ironfist","Shadowmere","Moonfall","Darkwater","Frostbane","Starcrest","Emberfall","Grimsbane","Lightbringer","Blackthorn","Dawnbreaker","Stonehelm","Mistvale","Thunderpeak"]
+    },
+    "female": {
+      "first": ["Elora","Lyra","Tamsin","Seraph","Arwyn","Isola","Nyra","Selene","Mirella","Calyra","Liora","Elaria","Sylvara","Fiora","Amara","Thalira","Virelle","Kalyndra","Rhianna","Aveline"],
+      "last": ["Moonfall","Dawnfire","Mistvale","Willowmere","Starcrest","Silversong","Shadowmere","Nightbloom","Sunwhisper","Frostveil","Emberdawn","Lightbloom","Windwhisper","Darkbriar","Stoneveil","Ashenfield","Stormglen","Brightvale","Shadowbloom","Skydancer"]
+    }
+  },
+  "sciFi": {
+    "male": {
+      "first": ["Orion","Talon","Axion","Dray","Rexar","Nero","Cyrus","Zenon","Kael","Vex","Dorian","Jaxon","Zyric","Rylan","Lex","Korr","Ryker","Tiber","Zane","Kade"],
+      "last": ["Volt","Vector","Prime","Eclipse","Ion","Nova","Stratus","Quark","Nebula","Photon","Pulse","Orbit","Phase","Crux","Ionis","Vortex","Drift","Aether","Zenith","Magnetar"]
+    },
+    "female": {
+      "first": ["Zyra","Rhea","Lyric","Kira","Nova","Vera","Jyn","Elexa","Lira","Cira","Vexa","Nexa","Talia","Xyra","Riva","Kyra","Syla","Viora","Zena","Aris"],
+      "last": ["Nebula","Phase","Quanta","Eclipse","Zenith","Vortex","Circuit","Photon","Nova","Drift","Aether","Orbit","Pulse","Magnetar","Crux","Ionis","Stratus","Galaxia","Lumin","Starfire"]
+    }
+  }
+}
